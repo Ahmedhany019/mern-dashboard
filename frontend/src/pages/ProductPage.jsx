@@ -12,7 +12,7 @@ const ProductsPage = () => {
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
-        "http://meta.env.VITE_APP_URL+/api/product/",
+        "http://server-4qcbbnzkq-ahmedhany019s-projects.vercel.app/api/product/",
         {
           headers: {
             Authorization: `${localStorage.getItem("token")}`,

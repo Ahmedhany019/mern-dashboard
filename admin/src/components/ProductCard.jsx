@@ -6,7 +6,7 @@ function ProductCard({ product, index, setProducts }) {
   const deleteProduct = async (id) => {
     try {
       const response = await axios.delete(
-        `http://meta.env.VITE_APP_URL+/api/product/delete/${id}`
+        `http://server-4qcbbnzkq-ahmedhany019s-projects.vercel.app/api/product/delete/${id}`
       );
       setProducts((prev) => prev.filter((product) => product._id !== id));
     } catch (error) {

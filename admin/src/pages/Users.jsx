@@ -7,11 +7,14 @@ function Users() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://meta.env.VITE_APP_URL+/api/user/", {
-        headers: {
-          Authorization: `${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await axios.get(
+        "http://server-4qcbbnzkq-ahmedhany019s-projects.vercel.app/api/user/",
+        {
+          headers: {
+            Authorization: `${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setUsers(res.data);
     } catch (error) {
       console.error("Error fetching users:", error);

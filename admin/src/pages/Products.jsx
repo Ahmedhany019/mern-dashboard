@@ -16,7 +16,7 @@ function Products() {
   const fetchProducts = async () => {
     try {
       const response = await axios.get(
-        "http://meta.env.VITE_APP_URL+/api/product/"
+        "http://server-4qcbbnzkq-ahmedhany019s-projects.vercel.app/api/product/"
       );
       setProducts(response.data);
     } catch (error) {
@@ -28,7 +28,7 @@ function Products() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://meta.env.VITE_APP_URL+/api/product/add",
+        "http://server-4qcbbnzkq-ahmedhany019s-projects.vercel.app/api/product/add",
         {
           name,
           price,

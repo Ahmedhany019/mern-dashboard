@@ -6,7 +6,7 @@ const UsersCard = ({ user, setUsers }) => {
   const deleteUser = async (id) => {
     try {
       const response = await axios.delete(
-        `http://meta.env.VITE_APP_URL+/api/user/${id}`,
+        `http://server-4qcbbnzkq-ahmedhany019s-projects.vercel.app/api/user/${id}`,
         {
           headers: {
             Authorization: `${localStorage.getItem("token")}`,
