@@ -11,17 +11,19 @@ const ProductsPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/product/", {
-        headers: {
-          Authorization: `${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await axios.get(
+        "http://meta.env.VITE_APP_URL+/api/product/",
+        {
+          headers: {
+            Authorization: `${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setProducts(res.data);
     } catch (error) {
       console.error("Error fetching products:", error);
     }
   };
-
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -41,7 +43,9 @@ const ProductsPage = () => {
                 key={product._id}
                 className="border-b hover:bg-gray-100 transition-all"
               >
-                <td className="p-4 text-gray-700 font-medium">{product.name}</td>
+                <td className="p-4 text-gray-700 font-medium">
+                  {product.name}
+                </td>
                 <td className="p-4 text-gray-600">${product.price}</td>
                 <td className="p-4 text-gray-600">{product.stock}</td>
               </tr>

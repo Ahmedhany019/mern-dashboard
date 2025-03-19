@@ -18,7 +18,7 @@ function App() {
   const handleSubmit =async (e) => {
     e.preventDefault();
     try {
-        const response =await axios.post("http://localhost:5000/api/user/login", {
+        const response =await axios.post(import.meta.env.VITE_APP_URL+"/api/user/login", {
             email,
             password})
             if(!response.data.success){
