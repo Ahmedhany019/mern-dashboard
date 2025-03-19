@@ -11,9 +11,10 @@ const PORT = process.env.PORT || 5000;
 const corsConfig = {
     origin: "*",
     credential:true,
-    method: ["POST","GET","PUT","DELETE"]
+    methods: ["PATCH","GET","POST","PUT","DELETE","OPTIONS"]
 }
 
+app.options("",cors(corsConfig))
 // Middleware
 app.use(express.json());
 app.use(cors(corsConfig));
