@@ -8,9 +8,15 @@ import routerProduct from "./Routes/productRoute.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const corsConfig = {
+    origin: "*",
+    credential:true,
+    method: ["POST","GET","PUT","DELETE"]
+}
+
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsConfig));
 
 // Routes
 app.use("/api/user", routerUser);
